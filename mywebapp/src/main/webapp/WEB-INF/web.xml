@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+
+	<servlet>
+		<servlet-name>postExtentionData</servlet-name>
+		<display-name>postExtentionData</display-name>
+		<description></description>
+		<servlet-class>dbAccess.PostExtentionData</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LoginCheck</servlet-name>
+		<display-name>LoginCheck</display-name>
+		<description></description>
+		<servlet-class>dbAccess.LoginCheck</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>extra2</servlet-name>
+		<display-name>extra2</display-name>
+		<description></description>
+		<servlet-class>extradb.extra2</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CarServlet</servlet-name>
+		<display-name>CarServlet</display-name>
+		<description>CarServlet</description>
+		<servlet-class>dbAccess.CarServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>postExtentionData</servlet-name>
+		<url-pattern>/postExtentionData</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginCheck</servlet-name>
+		<url-pattern>/LoginCheck</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>extra2</servlet-name>
+		<url-pattern>/extra2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CarServlet</servlet-name>
+		<url-pattern>/CarServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+
+</web-app>
