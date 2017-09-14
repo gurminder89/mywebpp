@@ -37,8 +37,6 @@
 <td> Monday 25 December- Christmas Day</td></tr>
 <tr>
 <td> Tuesday 26 December- Boxing Day</td></tr>
-</table>
-
-
 </body>
 </html>
+</table>
