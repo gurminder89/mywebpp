@@ -8,7 +8,7 @@
 </head>
 <body">
 <body bgcolor='#FF5733'>
-<h2 align="center">Error unauthorised user.........</h2>
+<h2 align="center"><%= request.getAttribute("errorMessage") %></h2>
 <h3 align="center">Please enter correct username and password :) </h3>
 </body>
 </html>

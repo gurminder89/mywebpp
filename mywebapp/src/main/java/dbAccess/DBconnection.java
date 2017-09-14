@@ -12,7 +12,7 @@ public DBconnection() throws ClassNotFoundException, SQLException {
 		System.out.println("initializing database created....****");
 	}
 	
-	public boolean searchUser(String username, String password) throws SQLException {
+	public boolean searchUser(String username, String password) throws SQLException, InvalidUserException {
 		PreparedStatement myStmt = null; 
 		ResultSet myRS = null;
 		String dbUrl = "jdbc:mysql://localhost:3306/webappdata2";
@@ -33,16 +33,14 @@ public DBconnection() throws ClassNotFoundException, SQLException {
 			if(myRS.next()) {
 				return true;
 			}
-			else {
-				return false;
-			}
+			throw new InvalidUserException();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			throw e;
 		}finally {
-			// myConn.close();
+			 myConn.close();
 		}
-		return false;
 	}
 	
 
@@ -60,6 +58,9 @@ public DBconnection() throws ClassNotFoundException, SQLException {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (InvalidUserException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}	

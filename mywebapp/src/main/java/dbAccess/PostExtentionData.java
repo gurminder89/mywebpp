@@ -17,7 +17,6 @@ public class PostExtentionData extends HttpServlet {
 
 	public PostExtentionData() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

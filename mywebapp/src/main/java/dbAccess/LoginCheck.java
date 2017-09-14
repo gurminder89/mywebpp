@@ -15,7 +15,6 @@ public class LoginCheck extends HttpServlet {
 
 	public LoginCheck() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,17 +33,21 @@ public class LoginCheck extends HttpServlet {
 			System.out.println("uname = " + uname + " :: password" + password);
 			if (newConnection.searchUser(uname, password)) {
 				response.sendRedirect("extension.jsp");
-			} else {
-
-				System.out.println("Servlet .. user not found");
-				response.sendRedirect("error.jsp");
 
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+			request.setAttribute("errorMessage", "Error: Database Unavailable");
+			request.getRequestDispatcher("error.jsp").forward(request, response);
+		} catch (InvalidUserException e) {
+			e.getStackTrace();
+			System.out.println("Servlet .. user not found");
+			request.setAttribute("errorMessage", "Error:Incorrect username or password");
+			request.getRequestDispatcher("error.jsp").forward(request, response);
 		} catch (Exception e) {
 			e.getStackTrace();
-
+			request.setAttribute("errorMessage", "Error:Server");
+			request.getRequestDispatcher("error.jsp").forward(request, response);
 		}
 
 	}
